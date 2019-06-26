@@ -118,6 +118,15 @@ function Check()
 			-- fuck, one beda miec rozne indexy. Musze uzywac find spacje. string.find. Albo zmienic przechowywanie na tablice w tablicy. Ta druga opcja jest raczej lepsza.
 			-- w tym momencie latwiej zaimplementowac to pierwsze..
 			-- OD NOWA
+			-- dobra, zaimplementowalismy te porzadniejsza opcje. Druga. Teraz ogarnac co tu robilem i dostosowac do tablicy tablic.
+			-- Hmm chyba jest potrzebne translate numer dwa. Albo nie. Jeszcze czy komentarze sa odpowiednio zrefaktoryzowane w translate.lua. Potem translate2 albo od razu uzywanie funkcji w logic_functions.lua
+			-- Tak, jest dobrze. Tylko jeden komentarz wprowadzajacy.
+			-- Dobra, czyli teraz ta druga czesc
+			-- translate2 albo od razu uzywanie funkcji logicznych
+			-- Let's see..
+			-- Hmm funkcja, ktora przypisze odpowiednie wartosci var1, var2, var3 biorac Statements[i] oraz wartosci a,b,c ? Mozna i tak..
+			-- Tak zrobmy
+			-- Moglaby nazywac sie Przypisz. Ale bedzie Assign. Z malej litery. assign(). W assign.lua. Plik nie przyjmuje argumentow. Bedzie wyrazenie (function) assign = dofile("assign.lua"). Bierze argumenty table,a,b,c. Gdzie table to statement. Czy moze variable powinno nazywac sie statement. Niech bedzie table, bo statement bardziej kojarzy sie z stringami.
 		end
 	end
 end
