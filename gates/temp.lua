@@ -1,3 +1,4 @@
+-- Kilka uzytecznych funkcji
 -- File to test chodzenie po pojedynczych przypadkach uzywajac modulo.
 dofile("gates.lua")
 -- Global variables

@@ -1,4 +1,4 @@
-
+-- just function permutations()
 -- wszystkie przypadki
 function permutations()
 	local table
