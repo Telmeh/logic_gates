@@ -19,11 +19,24 @@ assign = dofile("assign.lua")
 
 -- uzywamy Statements o wielkosci ~700
 -- i kazda jego komorka ma tablice skladajaca sie z pieciu komorek
--- Teraz przypisujemy vary, a,b,c. Musimy iterowac po permutacjach. Czyli Statements.
-	for _,statement in ipairs(Statements) do
-		if 
-			-- Mamy funkcje translate = dofile("translate.lua"), ktora tlumaczy '010=1' na zmienne
-			-- Mam funkcje AND, NAND, NOR, OR, XOR
-			-- temp.lua jest bardzo posuniety do przodu
-			-- wyglada ze to tyle. Tyle z temp.lua
+-- Mamy funkcje translate = dofile("translate.lua"), ktora tlumaczy '010=1' na zmienne
+-- Mam funkcje AND, NAND, NOR, OR, XOR
+-- temp.lua jest bardzo posuniety do przodu
+-- wyglada ze to tyle. Tyle z temp.lua
+-- Teraz trzeba zaczac uzywac funkcji logicznych. I tym razem to juz chyba nie bedzie zadna funkcja tylko petla w mainie.
+-- Po czym iterujemy? Chyba to co wlasnie usunalem. ipairs(Statements).
+-- Musimy isc po.. I dla kazdego sprawdzac testy. Tlumaczeniem testow zajmuje sie.. translate(). A assign() tlumaczy statements. Assign musi byc po translate. Dobra, czyli bedzie petla isc przez 700 przypadkow statements. I dla kazdego statement najpierw przypisze odpowiednie a,b,c dla testu1. Potem vary dostania odpowiednie booliany wedlug wartosci a,b,c. Na koniec jesli wynik bedzie rozny od s, to przerywamy petle testow i idziemy do kolejnego statement. Petla zewnetrzna to beda statements, a petla wewnetrzna to beda tests. Dobra, a jaki bedzie output. Chcialem kolorow uzywac dla oszczednosci miejsca.
+
+-- Colors
+no_color = "\\e[0m"; white = "\\e[1;37m"; black = "\\e[0;30m"; blue = "\\e[0;34m"; light_blue = "\\e[1;34m"; green = "\\e[0;32m"; light_green = "\\e[1;32m"; cyan = "\\e[0;36m"; light_cyan = "\\e[1;36m"; red = "\\e[0;31m"; light_red = "\\e[1;31m"; purple = "\\e[0;35m"; light_purple = "\\e[1;35m"; brown = "\\e[0;33m"; yellow = "\\e[1;33m"; gray = "\\e[0;30m"; light_gray="\\e[0;37m";
+
+-- dobra, co tera. Moglaby byc funkcja, ktora by pisala kolor. Ale samo wrapper function mozemy zrobic
+
+function printf(text)
+	local text2 = "printf(" .. text .. ")"
+	os.exectute(text2)
 end
+
+-- teraz wystarczy printf(color) by zmienic kolor
+
+-- Dobra, to mamy do formatowania. No dobra, to jak duzo chcemy zeby displayowal? Na poczatku chociaz? Czy wszystkie statements (700) x tests(8)? To raczej bez sensu. Generalnie statements, ktore sa tablicami powinny byc displayowane obok siebie, a nie kazda na osobnej linijce. I teraz jesli jest dobrze, to displayuje statement na zielono. A jesli zle to na czerwono. Wiekszosc bedzie na czerwono oczywiscie. Sukcesem bedzie, jesli chociaz jeden bedzie na zielono. A jak bedziemy sprawdzac czy wszystko dziala jak powinno? Wywolujac losowe statements. I wtedy niech pokazuje poszczegolne. Powinienem chyba zauplodowac do githuba 'working example'. Czyli te skladajace sie z 4 bramek.
