@@ -1,0 +1,70 @@
+00 = false
+01 = true
+10 = false
+11 = false
+ktorej zmiennej uzyc dwa razy. W stylu: s = (a or b) and b [ a to b, b to c]
+Zobaczmy co to daje:
+00 = 0 or 0 and 0 [kolejnosc od lewej] = 0
+01 = 0 or 1 and 1 = [dwa ory powinny zadzialac
+s = a or b or b. Hmm :// Musi falszowac przy a and b
+nand = ~(a and b)
+nor = ~(a or b)
+xor = only a or b. In other words a ~= b. 
+Sprawdzmy czy dobrze kumam. Dobrze.
+000, 011, 100, 110
+Zawsze gdy a=1 to s=0. a nand (). [Tylko gdy lewa strona jest falszywa i prawa jest falszywa] [Czyli teraz prawa musi byc falszywa, gdy ... ]
+Przetestujmy najprostsze wyrazenia:
+a and a and b = (a and a) and b = a and b
+a and b and b =(a and b) and b
+00 = 0
+01 = 0
+10 = 0
+11 = 1
+so a and b and b = a and b = (a and b) and b
+
+(a and b) and b = a and b
+a and b or a = (a and b) or a
+00 = 0
+01 = 0
+10 = 1
+11 = 1
+so: a and b or a = a
+(a and b) or a = a
+---------
+(a or b) and a
+00 = 0
+01 = 0
+10 = 1
+11 = 1
+ja pierdole, dalej nie otrzymalem niesymetrycznego
+(a or b) or a
+00 0
+01 1
+10 1
+11 1
+= a or b
+moze trzeba uzyc kombinacji not
+(a or b) or ~a
+00 = 1
+01 = 1
+10 = 1
+11 = 1
+=1
+(a and b) or ~a
+00 = 1
+01 = 1
+10 = 0
+11 = 1
+JEST! WRESZCIE NIESYMETRYCZNY REZULTAT
+Dobra. To chcemy miec: 
+00 = false, 01 = true, 10 = false, 11 = false.
+W takim razie: (a xor b) and b. EZ!
+
+__ C A L O S C__
+A or ((B xor C) and C) = S
+Wtedy:
+000 = 0 or ((0 xor 0) and 0) = 0 or ( 0 and 0) =0
+001 = 0 or ((0 xor 1) and 1) = 0 or (1 and 1) = 1
+010 = 0 or ((1 xor 0) and 0) = 0 or (1 and 0) = 0
+011 = 0 or ((1 xor 1) and 1) = 0 or (0 and 1) = 0
+100 = 1
