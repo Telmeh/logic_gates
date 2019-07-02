@@ -40,3 +40,12 @@ end
 -- teraz wystarczy printf(color) by zmienic kolor
 
 -- Dobra, to mamy do formatowania. No dobra, to jak duzo chcemy zeby displayowal? Na poczatku chociaz? Czy wszystkie statements (700) x tests(8)? To raczej bez sensu. Generalnie statements, ktore sa tablicami powinny byc displayowane obok siebie, a nie kazda na osobnej linijce. I teraz jesli jest dobrze, to displayuje statement na zielono. A jesli zle to na czerwono. Wiekszosc bedzie na czerwono oczywiscie. Sukcesem bedzie, jesli chociaz jeden bedzie na zielono. A jak bedziemy sprawdzac czy wszystko dziala jak powinno? Wywolujac losowe statements. I wtedy niech pokazuje poszczegolne. Powinienem chyba zauplodowac do githuba 'working example'. Czyli te skladajace sie z 4 bramek.
+-- Zrobione.
+-- Losowo czyli w sensie bede sam typowal jakies liczby. Sprawdzal ktores. Czyli chyba nawet bez kolorow. Nie wiem. Kolory na pewno sie przydadza przy post-finishu. Zeby displayowac udane testy na zielono, a bledne na czerwono. Taki debug.
+-- A na razie przed post-finishem bedzie finish. I na finishu chyba pokazemy tylko udane.
+-- Chyba zrobimy gates3.lua, taki z minimalna liczba komentarzy.
+-- Dobra czyli display bedzie wygladal tak. Bo druga opcja finishu jest taka, by pokazac 700 przypadkow bez enterow i udane zeby byly na zielono. Ale latwiej bedzie (i to jest raczej lepsza opcja na teraz) pokazac tylko udane przypadki. Wtedy piszemy liczbe porzadkowa albo najlepiej piszemy wyrazenie. Typu "b xor c and b".
+-- Nie pamietam jak sie one nazywaly. Ale to chyba bylo Statements = dofile("permutations.lua"). Tablica tablic. Kazda komorka Statements zawiera tablice typu { 'b', "xor", 'c', "nand", 'b'}.
+-- Czyli chyba przydalaby sie funkcja retab(). Read table. Ktora wypisze to oddzielone spacjami.
+-- W osobnym pliku? Ok.
+-- Czyli bedzie retab = dofile("read_table.lua")

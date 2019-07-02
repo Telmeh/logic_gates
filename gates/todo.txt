@@ -1,3 +1,11 @@
 	Dobra, czyli mam kolory. Chyba sie zapisalo. No raczej nie kasowalem danych termuxa po tym 28 czerwca.
 	Dobra, czyli moge uznac, ze kolorki dzialaja. Prawdopodobnie tak jest.
 	Mozemy zrobic git commit, aby zobaczyc roznice.
+	-Ogarnac w przyszlosci githuba lokalnego.
+	-Ogarnac w przyszlosci wyswietlanie roznic za pomoca git, bez wchodzenia na github.com
+	Hmm, nie pojawily sie nowe rzeczy na githubie.
+	Badzmy dobrej mysli, ze wszystko jest w porzadku.
+	Dobra, to co teraz. Kolory wydaja sie w porzadku. Obczajmy jak to wyglada.
+	Uhh nie maja odpowiedniej nazwy.
+	Dobra, wszystko jest w gates2b.lua.
+	Mogloby byc w osobnym pliku dla czystosci.
