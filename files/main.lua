@@ -19,17 +19,7 @@ assign = dofile("assign.lua")
 
 -- Teraz trzeba zaczac uzywac funkcji logicznych. I tym razem to juz chyba nie bedzie zadna funkcja tylko petla w mainie.
 -- Po czym iterujemy? Chyba to co wlasnie usunalem. ipairs(Statements).
--- Musimy isc po.. I dla kazdego sprawdzac testy. Tlumaczeniem testow zajmuje sie.. translate(). A assign() tlumaczy statements. Assign musi byc po translate. Dobra, czyli bedzie petla isc przez 700 przypadkow statements. I dla kazdego statement najpierw przypisze odpowiednie a,b,c dla testu1. Potem vary dostania odpowiednie booliany wedlug wartosci a,b,c. Na koniec jesli wynik bedzie rozny od s, to przerywamy petle testow i idziemy do kolejnego statement. Petla zewnetrzna to beda statements, a petla wewnetrzna to beda tests. Dobra, a jaki bedzie output. Chcialem kolorow uzywac dla oszczednosci miejsca.
-
--- Colors
-no_color = "\\e[0m"; white = "\\e[1;37m"; black = "\\e[0;30m"; blue = "\\e[0;34m"; light_blue = "\\e[1;34m"; green = "\\e[0;32m"; light_green = "\\e[1;32m"; cyan = "\\e[0;36m"; light_cyan = "\\e[1;36m"; red = "\\e[0;31m"; light_red = "\\e[1;31m"; purple = "\\e[0;35m"; light_purple = "\\e[1;35m"; brown = "\\e[0;33m"; yellow = "\\e[1;33m"; gray = "\\e[0;30m"; light_gray="\\e[0;37m";
-
--- dobra, co tera. Moglaby byc funkcja, ktora by pisala kolor. Ale samo wrapper function mozemy zrobic
-
-function printf(text)
-	local text2 = "printf \"" .. text .. "\""
-	os.exectute(text2)
-end
+-- Musimy isc po.. I dla kazdego sprawdzac testy. Tlumaczeniem testow zajmuje sie.. translate(). A assign() tlumaczy statements. Assign musi byc po translate. Dobra, czyli bedzie petla isc przez 700 przypadkow statements. I dla kazdego statement najpierw przypisze odpowiednie a,b,c dla testu1. Potem vary dostana odpowiednie booliany wedlug wartosci a,b,c. Na koniec jesli wynik bedzie rozny od s, to przerywamy petle testow i idziemy do kolejnego statement. Petla zewnetrzna to beda statements, a petla wewnetrzna to beda tests. Dobra, a jaki bedzie output. Chcialem kolorow uzywac dla oszczednosci miejsca.
 
 -- teraz wystarczy printf(color) by zmienic kolor
 
@@ -40,11 +30,14 @@ end
 -- Chyba zrobimy gates3.lua, taki z minimalna liczba komentarzy.
 -- Dobra czyli display bedzie wygladal tak. Bo druga opcja finishu jest taka, by pokazac 700 przypadkow bez enterow i udane zeby byly na zielono. Ale latwiej bedzie (i to jest raczej lepsza opcja na teraz) pokazac tylko udane przypadki. Wtedy piszemy liczbe porzadkowa albo najlepiej piszemy wyrazenie. Typu "b xor c and b".
 -- Nie pamietam jak sie one nazywaly. Ale to chyba bylo Statements = dofile("permutations.lua"). Tablica tablic. Kazda komorka Statements zawiera tablice typu { 'b', "xor", 'c', "nand", 'b'}.
--- Czyli chyba przydalaby sie funkcja retab(). Read table. Ktora wypisze to oddzielone spacjami.
--- W osobnym pliku? Ok.
--- Czyli bedzie retab = dofile("read_table.lua")
 
 -- Funkcja drukujaca wszystkie pola danej tablicy
 printab = dofile("print_table.lua")
 
--- Teraz funkcja color(color). color = dofile "color.lua"
+-- Dobra, mamy printab. Teraz jakas funkcja check()?
+-- Ja pierdole. Nie pamietam czym sa var1, var2, var3. To sa odpowiednio pola jeden, trzy, piec tablicy z tego co pamietam.
+-- Moze trzeba by funkcje() given { true, "and", false, "xor", true} returns true or false. Nom, trzeba.
+-- To jak sie bedzie nazywac? Bierze table. calculate().
+
+-- Function. Given {true, "xor", false, "and", true} returns true or false.
+calculate = dofile "calculate.lua"
