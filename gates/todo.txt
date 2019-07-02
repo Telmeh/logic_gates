@@ -1,0 +1,3 @@
+	Dobra, czyli mam kolory. Chyba sie zapisalo. No raczej nie kasowalem danych termuxa po tym 28 czerwca.
+	Dobra, czyli moge uznac, ze kolorki dzialaja. Prawdopodobnie tak jest.
+	Mozemy zrobic git commit, aby zobaczyc roznice.
