@@ -9,7 +9,7 @@ Tests = {"000=0","001=1","010=0","011=0","100=1","101=1","110=1","111=1"}
 AND, NAND, NOR, OR, XOR = dofile("logical_functions.lua")
 
 -- Table. Stores all possible permutations of tables like {'b',"nor",'c',"and",'c'} 
-Statements = dofile("permuations.lua")
+Statements = dofile("permutations.lua")
 
 -- Function. Given '010=1' returns a,b,c,s with correct boolean values
 translate = dofile("translate.lua")
@@ -41,3 +41,23 @@ printab = dofile("print_table.lua")
 
 -- Function. Given {true, "xor", false, "and", true} returns true or false.
 calculate = dofile "calculate.lua"
+
+-- Teraz co.. Testy sprawdzaja 8 przypadkow dla przeroznych wartosci a,b,c. Dla kazdego testu musimy porownac s z total. Czy te dwa boole sa takie same.
+-- Also, musimy miec w tablicy {false, "and", true, "xor", false}.
+
+for _,table in pairs(Statements) do
+	printab(table)
+	for i, test in pairs(Tests) do
+		local a,b,c,s = translate(test)
+		local var1, var2, var3 = assign(a, b, c, table)
+		local inserted = {var1, table[2], var2, table[4], var3}
+		local total = calculate(inserted)
+		if s ~= total then
+			break
+		end
+		if i == 8 then
+			printab(table)
+		end
+	end
+end
+
