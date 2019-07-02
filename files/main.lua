@@ -43,3 +43,8 @@ end
 -- Czyli chyba przydalaby sie funkcja retab(). Read table. Ktora wypisze to oddzielone spacjami.
 -- W osobnym pliku? Ok.
 -- Czyli bedzie retab = dofile("read_table.lua")
+
+-- Funkcja drukujaca wszystkie pola danej tablicy
+printab = dofile("print_table.lua")
+
+-- Teraz funkcja color(color). color = dofile "color.lua"
