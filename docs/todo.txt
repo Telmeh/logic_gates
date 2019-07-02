@@ -9,3 +9,7 @@
 	Uhh nie maja odpowiedniej nazwy.
 	Dobra, wszystko jest w gates2b.lua.
 	Mogloby byc w osobnym pliku dla czystosci.
+	Co tera
+	Chyba gates3.lua. Chyba ze ten plik do czytania tablic. Ok, plik do czytania tablic.
+	Kolory w funkcji color(). I w osobnym pliku.
+	Ok, plik do drukowania tablicy zrobiony. Teraz gates3 czy kolory. Moze gates3. W przyszlosci main.lua.
