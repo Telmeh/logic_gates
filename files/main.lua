@@ -48,6 +48,7 @@ calculate = dofile "calculate.lua"
 for _,table in pairs(Statements) do
 	printab(table)
 	for i, test in pairs(Tests) do
+		print(test)
 		local a,b,c,s = translate(test)
 		local var1, var2, var3 = assign(a, b, c, table)
 		local inserted = {var1, table[2], var2, table[4], var3}

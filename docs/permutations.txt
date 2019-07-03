@@ -1,0 +1,12 @@
+aaa
+aab
+27
+
+abc
+acb
+bac
+bca
+cab
+cba
+
+No wiec mozemy ograniczyc tak permutacje. Wszystkie gejtsy pomiedzy nimi. 6*5*5=150. Zmiana z 675. 
